@@ -1,0 +1,39 @@
+.reports{
+  display: flex;
+  flex-wrap: wrap;
+}
+.report{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 15px;
+  padding: 15px;
+  padding-right: 0;
+  background: linear-gradient(45deg, transparent, #1888e4 80%);
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px black;  
+}
+
+.report__text{
+  font-weight: normal;
+}
+
+.report__link{
+  position: relative;
+  right: 0;
+  align-self: flex-end;
+  padding: 10px;
+  padding-right: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  background: #f7a510;
+  color: black;
+  border-radius: 10px 0 0 10px;
+  box-shadow: 1px 0 3px;
+}
+
+.report__link:hover{
+  background: #ce8a0c;
+  box-shadow: inset 1px 0 3px;
+}

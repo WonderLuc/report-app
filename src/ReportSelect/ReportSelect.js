@@ -4,10 +4,10 @@ import {Link} from 'react-router-dom';
 function ReportSelect(props){
   
   return (
-    <nav>
-      <div>
-        <h2>Дневник Работы Врача</h2>
-        <Link to={`/doctor-dairy`}>Заполнить</Link>
+    <nav className="reports">
+      <div className="report">
+        <h2 className="report__text">Дневник Работы Врача</h2>
+        <Link className="report__link" to={`/doctor-dairy`}>Заполнить</Link>
       </div>
     </nav>
     
