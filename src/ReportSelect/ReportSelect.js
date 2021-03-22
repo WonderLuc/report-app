@@ -1,11 +1,16 @@
 import "./ReportSelect.css";
+import {Link} from 'react-router-dom';
 
 function ReportSelect(props){
+  
   return (
-    <div>
-      <h2>{props.text}</h2>
-      <a href="">to report</a>
-    </div>
+    <nav>
+      <div>
+        <h2>Дневник Работы Врача</h2>
+        <Link to={`/doctor-dairy`}>Заполнить</Link>
+      </div>
+    </nav>
+    
   )
 }
 
