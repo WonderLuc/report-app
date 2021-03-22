@@ -1,25 +1,31 @@
-header{
+header,
+footer{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 60px;
   background-color: rgb(24, 136, 228);
 }
 
-header h2,
-footer h2{
+header h2 a,
+footer h2 a{
   margin-left: 30px;
-  font-size: 1.2rem;
+  margin-right: 30px;
+  font-size: 1.5rem;
   font-weight: normal;
+  text-decoration: none;
   color: white;
 }
 
+header h2 a:hover,
+footer h2 a:hover{
+  color:rgb(228, 157, 24)
+}
 footer{
   position: fixed;
   bottom: 0;
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 60px;
+  justify-content: flex-end; 
   background-color: rgb(49, 49, 49);
 }
