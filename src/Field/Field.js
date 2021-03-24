@@ -8,10 +8,20 @@ function Field(props){
       return acc + `field-input_${current} `;
     }, '');
 
+    let changeHandler = (e)=>{
+      let value = e.target.value;
+      let name = props.options.text;
+      let newState = {};
+      newState[''+name] = value;
+      props.changeHandler(prevState=>{
+        let obj = Object.assign({},prevState,newState);
+        return obj;
+      });
+    }
   return(
     <label className="field">
       <span className="field-label">{props.options.text}</span>
-      <input className={className} type={props.options.type}/>
+      <input className={className} type={props.options.type} onChange={changeHandler}/>
     </label>
   )
 }
