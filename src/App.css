@@ -1,5 +1,6 @@
 header,
 footer{
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,19 +21,20 @@ footer h2 a{
 
 header h2 a:hover,
 footer h2 a:hover{
-  color:rgb(228, 157, 24)
+  color:rgb(228, 157, 24);
+  cursor: pointer;
+}
+header{
+  top:0;
 }
 footer{
-  position: fixed;
   bottom: 0;
-  display: flex;
   justify-content: flex-end; 
-  margin-top: 30px;
   background-color: rgb(49, 49, 49);
 }
 
 .content{
   max-width: 1200px;
   width: 100%;
-  margin: 0 auto;
+  margin: 80px auto;
 }
