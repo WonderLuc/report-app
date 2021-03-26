@@ -1,0 +1,10 @@
+.calendar{
+  display: flex;
+  padding: 10px;
+  background: linear-gradient(90deg,#1888e4 , transparent 50%);  
+}
+
+
+.calendar__text{
+  margin-right: 10px;
+}
