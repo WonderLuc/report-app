@@ -1,11 +1,11 @@
 import "./Field.css";
 
 function Field(props){
-  let className = "field-input " + props.options.class
+  let className = "field__input " + props.options.class
     props.options.class
     .split(" ")
     .reduce((acc, current)=>{
-      return acc + `field-input_${current} `;
+      return acc + `field__input_${current} `;
     }, '');
 
     let changeHandler = (e)=>{
@@ -20,7 +20,7 @@ function Field(props){
     }
   return(
     <label className="field">
-      <span className="field-label">{props.options.text}</span>
+      <span className="field__text">{props.options.text}</span>
       <input className={className} type={props.options.type} onChange={changeHandler}/>
     </label>
   )
