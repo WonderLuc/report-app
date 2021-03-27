@@ -1,0 +1,11 @@
+.fieldset{
+  display:flex;
+  flex-wrap: wrap;
+}
+.fieldset h4:first-child{
+  width: 100%;
+}
+
+section h3{
+  margin-top: 50px;
+}
