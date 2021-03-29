@@ -1,7 +1,8 @@
-import './DoctorDairy.css';
 import Field from "../Field/Field";
 import Calendar from "../Calendar/Calendar";
+import Button from '../Button/Button';
 import { useState } from 'react';
+import './DoctorDairy.css';
 
 function DoctorDairy(props){
   const [date, setDate] = useState(new Date());
@@ -37,7 +38,7 @@ function DoctorDairy(props){
     setPaid({});
     setOther({});
     document.querySelectorAll('input[type="number"]').forEach(el=>{
-      el.value = 0;
+      el.value = '';
     })
   }
 
@@ -192,8 +193,8 @@ function DoctorDairy(props){
         <Field options={{text:"Прочие", type:"number", class:""}} changeHandler={setPaid}/>
       </section>
       <div className="buttons-wrapper">
-        <button className="button button_clear" onClick={clear}>Очистить</button>
-        <button className="button button_send" onClick={send}>Отправить</button>
+        <Button className="button_clear" handler={clear} text="Очистить" />
+        <Button className="button_send" handler={send} text="Отправить" />
       </div>   
     </form>
   )
