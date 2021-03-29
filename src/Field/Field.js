@@ -14,10 +14,10 @@ function Field(props){
       'Диспансер. набор': 'dispensary',
       'Разовые': 'once',
       'Закрытые обращения': 'closed',
-      'СТВ': 'ovw',
+      'СТВ': 'owa',
       'Профосмотры': 'inspection',
       'Прочие': 'other',
-      'Посещения СТВ': 'ovwVisits'
+      'Посещения СТВ': 'owaVisits'
     }
     let changeHandler = (e)=>{
       let value = e.target.value;
