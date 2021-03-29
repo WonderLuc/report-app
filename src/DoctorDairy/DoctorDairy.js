@@ -12,6 +12,35 @@ function DoctorDairy(props){
   const [other, setOther] = useState({});
   const [paid, setPaid] = useState({});
 
+  function send(e){
+    e.preventDefault();
+    let obj = {
+      date,
+      famylies,
+      employes,
+      oldmans,
+      freemans,
+      other,
+      paid
+    };
+    obj = JSON.stringify(obj);
+    console.log(obj); 
+  }
+  
+  function clear(e){
+    e.preventDefault();
+    setDate({});
+    setEmployes({});
+    setFamilies({});
+    setFreemans({});
+    setOldmans({});
+    setPaid({});
+    setOther({});
+    document.querySelectorAll('input[type="number"]').forEach(el=>{
+      el.value = 0;
+    })
+  }
+
   return(
     <form>
       <h2> Дневник работы врача</h2>
@@ -162,6 +191,10 @@ function DoctorDairy(props){
         <Field options={{text:"Профосмотры", type:"number", class:""}} changeHandler={setPaid}/>
         <Field options={{text:"Прочие", type:"number", class:""}} changeHandler={setPaid}/>
       </section>
+      <div className="buttons-wrapper">
+        <button className="button button_clear" onClick={clear}>Очистить</button>
+        <button className="button button_send" onClick={send}>Отправить</button>
+      </div>   
     </form>
   )
 }

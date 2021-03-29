@@ -1,3 +1,6 @@
+form{
+  position: relative;
+}
 .fieldset{
   display:flex;
   flex-wrap: wrap;
@@ -8,4 +11,46 @@
 
 section h3{
   margin-top: 50px;
+}
+
+.buttons-wrapper{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.button{
+  margin:5px;
+  padding: 10px;
+  border: 2px solid yellow;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  background: transparent;
+  
+}
+
+.button_clear{
+  border: none;
+  background-color: rgba(128, 128, 128, 0.527);
+  color: white;
+  box-shadow: 1px 0 3px;
+}
+
+.button_clear:hover{
+  background: rgba(109, 109, 109, 0.527);
+  box-shadow: inset 1px 0 3px;
+}
+
+.button_send{
+  text-decoration: none;
+  border: none;
+  background: #f7a510;
+  color: black;
+  box-shadow: 1px 0 3px;
+}
+
+.button_send:hover{
+  background: #ce8a0c;
+  box-shadow: inset 1px 0 3px;
 }
