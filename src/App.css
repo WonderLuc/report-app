@@ -29,7 +29,7 @@ header{
   top:0;
 }
 footer{
-  bottom: 0;
+  position: static;
   justify-content: flex-end; 
   background-color: rgb(49, 49, 49);
 }
