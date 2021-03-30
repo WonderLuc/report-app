@@ -3,9 +3,11 @@ import Calendar from "../Calendar/Calendar";
 import Button from '../Button/Button';
 import { useState } from 'react';
 import './DoctorDairy.css';
+import Modal from '../Modal/Modal';
 
 function DoctorDairy(props){
-  const [date, setDate] = useState(new Date());
+  const [isOpenModal, setIsModal] = useState(false);
+  const [date, setDate] = useState(new Date().toISOString().replace(/T.+/,''));
   const [famylies, setFamilies] = useState({});
   const [employes, setEmployes] = useState({});
   const [oldmans, setOldmans] = useState({});
@@ -13,8 +15,23 @@ function DoctorDairy(props){
   const [other, setOther] = useState({});
   const [paid, setPaid] = useState({});
 
+  function isFilled(){
+    let result = true;
+    document.querySelectorAll('input[type="number"]').forEach(el=>{
+      if(el.value === ''){
+        result = false;
+        return;
+      }
+    });
+    return result;
+  }
+
   function send(e){
     e.preventDefault();
+    if(!isFilled() && !isOpenModal){
+      setIsModal(true);
+      return;
+    }
     let obj = {
       date,
       famylies,
@@ -25,12 +42,12 @@ function DoctorDairy(props){
       paid
     };
     obj = JSON.stringify(obj);
-    console.log(obj); 
+    console.log(obj);
+    setIsModal(false); 
   }
   
   function clear(e){
     e.preventDefault();
-    setDate({});
     setEmployes({});
     setFamilies({});
     setFreemans({});
@@ -39,7 +56,12 @@ function DoctorDairy(props){
     setOther({});
     document.querySelectorAll('input[type="number"]').forEach(el=>{
       el.value = '';
-    })
+    });
+    window.scrollTo(0,0);
+  }
+
+  function toggleModal(){
+    setIsModal(!isOpenModal);
   }
 
   return(
@@ -193,9 +215,15 @@ function DoctorDairy(props){
         <Field options={{text:"Прочие", type:"number", class:""}} changeHandler={setPaid}/>
       </section>
       <div className="buttons-wrapper">
-        <Button className="button_clear" handler={clear} text="Очистить" />
-        <Button className="button_send" handler={send} text="Отправить" />
-      </div>   
+        <Button className="button_negative" handler={clear} text="Очистить" />
+        <Button className="button_positive" handler={send} text="Отправить" />
+      </div>
+      {
+        isOpenModal && 
+        <Modal text="Не все поля заполнены! Вы уверены, что хотите отправить?" 
+            accept={send} 
+            cancel={toggleModal}/>
+      }   
     </form>
   )
 }
