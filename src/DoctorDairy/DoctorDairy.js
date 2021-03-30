@@ -42,7 +42,16 @@ function DoctorDairy(props){
       paid
     };
     obj = JSON.stringify(obj);
-    console.log(obj);
+    fetch(`http://${window.location.hostname}/api`,{
+      method: 'POST',
+      mode: 'cors',
+      headers:{
+        'Content-type':'application/json'
+      },
+      body: obj
+    })
+    .then(res=>console.log(res.ok))
+    .catch(err=>console.log(err));
     setIsModal(false); 
   }
   
