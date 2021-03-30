@@ -14,19 +14,19 @@
 }
 
 
-.button_clear{
+.button_negative{
   border: none;
   background-color: rgba(128, 128, 128, 0.527);
   color: white;
   box-shadow: 1px 0 3px;
 }
 
-.button_clear:hover{
+.button_negative:hover{
   background: rgba(109, 109, 109, 0.527);
   box-shadow: inset 1px 0 3px;
 }
 
-.button_send{
+.button_positive{
   text-decoration: none;
   border: none;
   background: #f7a510;
@@ -34,7 +34,11 @@
   box-shadow: 1px 0 3px;
 }
 
-.button_send:hover{
+.button_positive:hover{
   background: #ce8a0c;
   box-shadow: inset 1px 0 3px;
+}
+
+.button_big{
+  width: 150px;
 }
