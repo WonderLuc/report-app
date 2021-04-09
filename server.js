@@ -10,10 +10,6 @@ app.use(express.json());
 
 // App part
 app.get('/',(req,res)=>{
-  res.set({
-    'Access-Control-Allow-Origin':'*',
-    'Access-Control-Allow-Methods':'POST, GET, OPTIONS',
-  })
   res.send('<h1>Reports</h1>');
 });
 

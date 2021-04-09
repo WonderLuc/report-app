@@ -2,6 +2,16 @@ let express = require('express');
 let router = express.Router();
 
 //Middleware
+
+router.use((req,res,next)=>{
+  res.set({
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Methods':'POST, GET, OPTIONS',
+    'Access-Control-Allow-Headers': 'content-type'
+  })
+  next();
+});
+
 // AUTH from Token need!
 // router.use((req,res,next)=>{
 //   if(!true){                  
@@ -10,19 +20,10 @@ let router = express.Router();
 //   }
 //   next();
 // })
-router.use((req,res,next)=>{
-  res.set({
-    'Access-Control-Allow-Origin':'*',
-    'Access-Control-Allow-Methods':'POST, GET, OPTIONS',
-    'Access-Control-Allow-Headers': 'content-type'
-  })
-  next();
-})
 
 //Routes
 router.get('/',(req,res)=>{
-
-  console.log(req.body);
+  // add reading from database 
   res.send('<h1>API</h1>');
 })
 .post('/',(req,res)=>{
@@ -31,7 +32,7 @@ router.get('/',(req,res)=>{
   res.send();
 })
 .options('/',(req,res)=>{
-
+  // pre-flight requeste
   res.send();
 });
 
